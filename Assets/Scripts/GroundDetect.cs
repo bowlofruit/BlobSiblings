@@ -3,27 +3,37 @@ using UnityEngine.Events;
 
 public class GroundDetect : MonoBehaviour
 {
-    public UnityEvent<bool> OnGroundCheck { get; set; } = new UnityEvent<bool>();
+    public UnityEvent<float> ChangeIceAccelerationEvent { get; set; } = new UnityEvent<float>();
+    public UnityEvent<bool> GroundCheckEvent { get; set; } = new UnityEvent<bool>();
 
-    private bool _isGround;
+    private int _groundColliderCount = 0;
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collider)
     {
-        if(collision != null)
+        if (collider.gameObject.CompareTag("Ice"))
         {
-            Debug.Log("Enter");
-            _isGround = true;
-            OnGroundCheck.Invoke(_isGround);
+            ChangeIceAccelerationEvent.Invoke(1.4f);
         }
+        else
+        {
+            ChangeIceAccelerationEvent.Invoke(1f);
+        }
+
+        if (collider != null && _groundColliderCount == 0)
+        {
+            GroundCheckEvent.Invoke(true);
+        }
+
+        _groundColliderCount++;
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    private void OnTriggerExit2D(Collider2D collider)
     {
-        if(collision != null) 
+        _groundColliderCount--;
+
+        if(collider != null && _groundColliderCount == 0) 
         {
-            Debug.Log("Exit");
-            _isGround = false;
-            OnGroundCheck.Invoke(_isGround);
+            GroundCheckEvent.Invoke(false);
         }
     }
 }

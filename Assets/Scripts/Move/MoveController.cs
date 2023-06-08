@@ -5,8 +5,9 @@ public class MoveController : MonoBehaviour
 {
     [SerializeField] private ParticleSystem _groundJump;
 
-    public UnityEvent<int> OnChangeMoveDirection { get; set; } = new UnityEvent<int>();
-        
+    public UnityEvent<int> ChangeMoveDirectionEvent { get; set; } = new UnityEvent<int>();
+
+    private bool _isInputAccess;
     private MoveCommand _moveCommand;
     private JumpCommand _jumpCommand;
     private Rigidbody2D _playerRB;
@@ -31,13 +32,21 @@ public class MoveController : MonoBehaviour
 
     private void Awake()
     {
+        EventController.SwitchInputSystemEvent.Invoke(true);
+
         _playerRB = GetComponent<Rigidbody2D>();
         _playerRB.freezeRotation = true;
+
+        _isInputAccess = true;
 
         _jumpCommand = new JumpCommand(_playerRB, _jumpForse);
         _moveCommand = new MoveCommand(_playerRB, _speedMove);
 
-        GetComponentInChildren<GroundDetect>().OnGroundCheck?.AddListener(UpdateGroundStatus);
+        EventController.SwitchInputSystemEvent?.AddListener(UpdateInputAccessStatus);
+        ChangeMoveDirectionEvent.AddListener(_moveCommand.SetDirection);
+
+        GetComponentInChildren<GroundDetect>().GroundCheckEvent?.AddListener(UpdateGroundStatus);     
+        GetComponentInChildren<GroundDetect>().ChangeIceAccelerationEvent?.AddListener(_moveCommand.SetIceAcceleration);
     }
 
     private void Update()
@@ -45,8 +54,7 @@ public class MoveController : MonoBehaviour
         JumpInput();
         FasterFall();
 
-        OnChangeMoveDirection?.Invoke(GetMoveDirection());
-        _moveCommand.SetDirection(GetMoveDirection());
+        ChangeMoveDirectionEvent?.Invoke(GetMoveDirection());
     }
 
     private void FixedUpdate()
@@ -57,13 +65,12 @@ public class MoveController : MonoBehaviour
             _jumpCommand.Execute();
         }
         _isJumping = false;
-
         _moveCommand?.Execute();
     }
 
     private int GetMoveDirection()
     {
-        return Input.GetKey(_leftMoveKey) ? -1 : Input.GetKey(_rightMoveKey) ? 1 : 0;
+        return Input.GetKey(_leftMoveKey) && _isInputAccess ? -1 : Input.GetKey(_rightMoveKey) && _isInputAccess ? 1 : 0;
     }
 
     private void FasterFall()
@@ -73,7 +80,7 @@ public class MoveController : MonoBehaviour
 
     private void JumpInput()
     {
-        if (Input.GetKey(_jumpKey))
+        if (Input.GetKey(_jumpKey) && _isInputAccess)
         {
             _isJumping = true;
         }
@@ -82,5 +89,22 @@ public class MoveController : MonoBehaviour
     private void UpdateGroundStatus(bool isGrounded)
     {
         _isGround = isGrounded;
+    }
+
+    private void UpdateInputAccessStatus(bool isInputAccess)
+    {
+        _isInputAccess = isInputAccess;
+    }
+
+    public void ChangeMoveProps(float speedMove, float jumpForse)
+    {
+        _speedMove = speedMove;
+        _jumpForse = jumpForse;
+    }
+
+    public void SaveMoveProps(out float speedMove, out float jumpForse)
+    {
+        speedMove = _speedMove;
+        jumpForse = _jumpForse;
     }
 }

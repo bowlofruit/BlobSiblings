@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Interract
+  - Ice
+  - Trap
   layers:
   - Default
   - TransparentFX
