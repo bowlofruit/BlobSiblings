@@ -635,6 +635,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 155919869}
   m_CullTransparentMesh: 1
+--- !u!212 &279080272 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 5437575348750809330, guid: 0f56c66b4ecf638439e46fe70120e603, type: 3}
+  m_PrefabInstance: {fileID: 1746601225}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &281513605
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -713,7 +718,7 @@ PrefabInstance:
     - target: {fileID: 1196863707391689946, guid: 61ce3ee5b2e291241af5912ba467bc19, type: 3}
       propertyPath: _linkedPlatformsSprites.Array.data[0]
       value: 
-      objectReference: {fileID: 578516400}
+      objectReference: {fileID: 1385588767}
     - target: {fileID: 7586430356822778708, guid: 61ce3ee5b2e291241af5912ba467bc19, type: 3}
       propertyPath: m_Name
       value: Button (2)
@@ -2855,12 +2860,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1475717474989360352, guid: 0f56c66b4ecf638439e46fe70120e603, type: 3}
       propertyPath: _buttons.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1475717474989360352, guid: 0f56c66b4ecf638439e46fe70120e603, type: 3}
       propertyPath: _buttons.Array.data[0]
       value: 
       objectReference: {fileID: 1366271746}
+    - target: {fileID: 1475717474989360352, guid: 0f56c66b4ecf638439e46fe70120e603, type: 3}
+      propertyPath: _buttons.Array.data[1]
+      value: 
+      objectReference: {fileID: 1838874732}
     - target: {fileID: 5328335456353858178, guid: 0f56c66b4ecf638439e46fe70120e603, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -3009,6 +3018,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!212 &593119686 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 5437575348750809330, guid: 0f56c66b4ecf638439e46fe70120e603, type: 3}
+  m_PrefabInstance: {fileID: 541390025}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &680565428
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3789,7 +3803,7 @@ PrefabInstance:
     - target: {fileID: 1196863707391689946, guid: 61ce3ee5b2e291241af5912ba467bc19, type: 3}
       propertyPath: _linkedPlatformsSprites.Array.data[0]
       value: 
-      objectReference: {fileID: 1385588767}
+      objectReference: {fileID: 279080272}
     - target: {fileID: 7586430356822778708, guid: 61ce3ee5b2e291241af5912ba467bc19, type: 3}
       propertyPath: m_Name
       value: Button (4)
@@ -6290,7 +6304,7 @@ PrefabInstance:
     - target: {fileID: 1196863707391689946, guid: 61ce3ee5b2e291241af5912ba467bc19, type: 3}
       propertyPath: _linkedPlatformsSprites.Array.data[0]
       value: 
-      objectReference: {fileID: 1385588767}
+      objectReference: {fileID: 593119686}
     - target: {fileID: 7586430356822778708, guid: 61ce3ee5b2e291241af5912ba467bc19, type: 3}
       propertyPath: m_Name
       value: Button (3)
@@ -7067,7 +7081,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2023790429}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.18, y: 0, z: -10}
+  m_LocalPosition: {x: 0.26, y: 0.1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7224,7 +7238,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2057440714}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 581101715}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: RestartLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2057440714
 MonoBehaviour:
   m_ObjectHideFlags: 0

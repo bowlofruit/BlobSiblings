@@ -4,7 +4,13 @@ public class SpikeController : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        collision.GetComponent<EventController>().DieStatusChangedEvent.Invoke(true);
-        EventController.SwitchInputSystemEvent.Invoke(false);
+        EventController eventController = collision.GetComponent<EventController>();
+
+        if(collision != null && eventController != null) 
+        {
+            eventController.DieStatusChangedEvent.Invoke(true);
+            EventController.SwitchInputSystemEvent.Invoke(false);
+        }
+        
     }
 }
