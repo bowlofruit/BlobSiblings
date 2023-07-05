@@ -6,11 +6,6 @@ public class SaveSystemController : MonoBehaviour
     [SerializeField] private GameObject[] _playerObjects;
     private Vector3[] _playerPos;
 
-    private void Start()
-    {
-        SaveGame();
-    }
-
     public void SaveGame()
     {
         if (_playerObjects == null || _playerObjects.Length == 0)
