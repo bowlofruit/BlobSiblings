@@ -1,23 +1,26 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 
-public class PushDetector : MonoBehaviour
+namespace BlobSiblings
 {
-    public UnityEvent<bool> PushCheckEvent { get; set; } = new UnityEvent<bool>();
-
-    private void OnTriggerEnter2D(Collider2D collider)
+    public class PushDetector : MonoBehaviour
     {
-        if (collider != null)
+        public UnityEvent<bool> PushCheckEvent { get; set; } = new UnityEvent<bool>();
+
+        private void OnTriggerEnter2D(Collider2D collider)
         {
-            PushCheckEvent.Invoke(true);
+            if (collider != null)
+            {
+                PushCheckEvent.Invoke(true);
+            }
         }
-    }
 
-    private void OnTriggerExit2D(Collider2D collider)
-    {
-        if (collider != null)
+        private void OnTriggerExit2D(Collider2D collider)
         {
-            PushCheckEvent.Invoke(false);
+            if (collider != null)
+            {
+                PushCheckEvent.Invoke(false);
+            }
         }
     }
 }

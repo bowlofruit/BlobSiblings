@@ -1,16 +1,19 @@
 using System;
 using UnityEngine;
 
-public class PuddleController : MonoBehaviour
+namespace BlobSiblings
 {
-    [SerializeField] private Collider2D[] _playerColliders;
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    public class PuddleController : MonoBehaviour
     {
-        if (Array.Exists(_playerColliders, collider => collider == collision))
+        [SerializeField] private Collider2D[] _playerColliders;
+
+        private void OnTriggerEnter2D(Collider2D collision)
         {
-            collision.GetComponent<EventController>().DieStatusChangedEvent.Invoke(true);
-            EventController.SwitchInputSystemEvent.Invoke(false);
+            if (Array.Exists(_playerColliders, collider => collider == collision))
+            {
+                collision.GetComponent<EventController>().DieStatusChangedEvent.Invoke(true);
+                EventController.SwitchInputSystemEvent.Invoke(false);
+            }
         }
     }
 }

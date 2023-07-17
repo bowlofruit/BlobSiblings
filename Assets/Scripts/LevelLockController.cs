@@ -2,56 +2,58 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class LevelLockController : MonoBehaviour
+namespace BlobSiblings
 {
-    private int _openLevels = 0;
-
-    [SerializeField] private Button[] _levelChoose;
-
-    private void Awake()
+    public class LevelLockController : MonoBehaviour
     {
-        PlayerPrefs.SetInt("CompletedLevelsCount", 2);
-        Debug.Log(PlayerPrefs.GetInt("CompletedLevelsCount"));
+        private int _openLevels = 0;
 
-        foreach (var button in _levelChoose)
+        [SerializeField] private Button[] _levelChoose;
+
+        private void Awake()
         {
-            button.interactable = false;
+            PlayerPrefs.SetInt("CompletedLevelsCount", 2);
+
+            foreach (var button in _levelChoose)
+            {
+                button.interactable = false;
+            }
+
+            EventController.LevelComplete.AddListener(AddCompletedLevelsCount);
         }
 
-        EventController.LevelComplete.AddListener(AddCompletedLevelsCount);
-    }
-
-    public void LevelChooseButtonInit()
-    {
-        if (PlayerPrefs.HasKey("CompletedLevelsCount"))
+        public void LevelChooseButtonInit()
         {
-            _openLevels = PlayerPrefs.GetInt("CompletedLevelsCount");
+            if (PlayerPrefs.HasKey("CompletedLevelsCount"))
+            {
+                _openLevels = PlayerPrefs.GetInt("CompletedLevelsCount");
+            }
+            else
+            {
+                AddCompletedLevelsCount();
+            }
+
+            for (int i = 0; i < _openLevels; i++)
+            {
+                _levelChoose[i].interactable = true;
+            }
         }
-        else
+
+        public void AddCompletedLevelsCount()
         {
-            AddCompletedLevelsCount();
+            _openLevels++;
+            PlayerPrefs.SetInt("CompletedLevelsCount", _openLevels);
         }
 
-        for (int i = 0; i < _openLevels; i++)
+        public void ResetCompleteLevelCount()
         {
-            _levelChoose[i].interactable = true;
+            PlayerPrefs.DeleteKey("CompletedLevelsCount");
+            Debug.Log(PlayerPrefs.GetInt("CompletedLevelsCount"));
         }
-    }
 
-    public void AddCompletedLevelsCount()
-    {
-        _openLevels++;
-        PlayerPrefs.SetInt("CompletedLevelsCount", _openLevels);
-    }
-
-    public void ResetCompleteLevelCount()
-    {
-        PlayerPrefs.DeleteKey("CompletedLevelsCount");
-        Debug.Log(PlayerPrefs.GetInt("CompletedLevelsCount"));
-    }
-
-    public void LevelStart(int selectedLevel)
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + selectedLevel);
+        public void LevelStart(int selectedLevel)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + selectedLevel);
+        }
     }
 }

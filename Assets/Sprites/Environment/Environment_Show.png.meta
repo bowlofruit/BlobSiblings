@@ -20,11 +20,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -63,6 +64,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
   cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
@@ -75,6 +77,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -87,6 +90,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -99,6 +103,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -111,6 +116,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -1219,61 +1225,60 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Environment_Show_23: 61320661
-      Environment_Show_50: -116084175
-      Environment_Show_2: -123221297
-      Environment_Show_5: -1073044684
-      Environment_Show_7: 1897296736
-      Environment_Show_21: -549081680
-      Environment_Show_31: 1912218368
-      Environment_Show_42: 1912749543
-      Environment_Show_16: 531155995
-      Environment_Show_6: -2076373919
-      Environment_Show_14: -907706987
-      Environment_Show_4: 1753087639
-      Environment_Show_17: -198921195
-      Environment_Show_11: -1163475726
-      Environment_Show_37: 1088925940
-      Environment_Show_43: -687355891
-      Environment_Show_8: -1707747434
-      Environment_Show_47: -102333585
-      Environment_Show_49: -2045071266
-      Environment_Show_26: -2061055295
-      Environment_Show_46: -513337906
-      Environment_Show_40: -825318245
-      Environment_Show_25: 1026019901
-      Environment_Show_44: 1200682416
-      Environment_Show_28: 253598396
-      Environment_Show_33: -955815877
-      Environment_Show_51: -416641301
-      Environment_Show_34: -2067821766
-      Environment_Show_9: 996940960
-      Environment_Show_3: -1080465770
-      Environment_Show_10: -106315384
-      Environment_Show_13: 332757620
-      Environment_Show_38: 1676846896
-      Environment_Show_45: 974084353
-      Environment_Show_27: -237798655
-      Environment_Show_19: -640535911
-      Environment_Show_1: 1295304159
-      Environment_Show_30: -336356339
-      Environment_Show_20: 1630761520
-      Environment_Show_39: 1712808066
-      Environment_Show_24: 718307578
-      Environment_Show_29: 1822097478
-      Environment_Show_48: -781141760
-      Environment_Show_15: 726527013
-      Environment_Show_41: -774038616
-      Environment_Show_32: 2087787829
-      Environment_Show_36: 572862715
       Environment_Show_0: -750126204
-      Environment_Show_35: -1026761802
+      Environment_Show_1: 1295304159
+      Environment_Show_10: -106315384
+      Environment_Show_11: -1163475726
       Environment_Show_12: 1349923173
-      Environment_Show_22: 2000117434
+      Environment_Show_13: 332757620
+      Environment_Show_14: -907706987
+      Environment_Show_15: 726527013
+      Environment_Show_16: 531155995
+      Environment_Show_17: -198921195
       Environment_Show_18: -1605827461
-  spritePackingTag: 
+      Environment_Show_19: -640535911
+      Environment_Show_2: -123221297
+      Environment_Show_20: 1630761520
+      Environment_Show_21: -549081680
+      Environment_Show_22: 2000117434
+      Environment_Show_23: 61320661
+      Environment_Show_24: 718307578
+      Environment_Show_25: 1026019901
+      Environment_Show_26: -2061055295
+      Environment_Show_27: -237798655
+      Environment_Show_28: 253598396
+      Environment_Show_29: 1822097478
+      Environment_Show_3: -1080465770
+      Environment_Show_30: -336356339
+      Environment_Show_31: 1912218368
+      Environment_Show_32: 2087787829
+      Environment_Show_33: -955815877
+      Environment_Show_34: -2067821766
+      Environment_Show_35: -1026761802
+      Environment_Show_36: 572862715
+      Environment_Show_37: 1088925940
+      Environment_Show_38: 1676846896
+      Environment_Show_39: 1712808066
+      Environment_Show_4: 1753087639
+      Environment_Show_40: -825318245
+      Environment_Show_41: -774038616
+      Environment_Show_42: 1912749543
+      Environment_Show_43: -687355891
+      Environment_Show_44: 1200682416
+      Environment_Show_45: 974084353
+      Environment_Show_46: -513337906
+      Environment_Show_47: -102333585
+      Environment_Show_48: -781141760
+      Environment_Show_49: -2045071266
+      Environment_Show_5: -1073044684
+      Environment_Show_50: -116084175
+      Environment_Show_51: -416641301
+      Environment_Show_6: -2076373919
+      Environment_Show_7: 1897296736
+      Environment_Show_8: -1707747434
+      Environment_Show_9: 996940960
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

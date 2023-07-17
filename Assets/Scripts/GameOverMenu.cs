@@ -1,16 +1,19 @@
 ﻿using UnityEngine;
 
-public class GameOverMenu : MonoBehaviour
+namespace BlobSiblings
 {
-    [SerializeField] private GameObject _gameOverMenu;
-
-    private void Awake()
+    public class GameOverMenu : MonoBehaviour
     {
-        EventController.LevelFailed.AddListener(ActivityMenu);
-    }
+        [SerializeField] private GameObject _gameOverMenu;
 
-    private void ActivityMenu()
-    {
-        _gameOverMenu.SetActive(true);
+        private void Awake()
+        {
+            EventController.LevelFailed.AddListener(ActivityMenu);
+        }
+
+        private void ActivityMenu()
+        {
+            _gameOverMenu.SetActive(true);
+        }
     }
 }

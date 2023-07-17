@@ -20,11 +20,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -63,6 +64,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
   cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
@@ -75,6 +77,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -87,6 +90,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -99,6 +103,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -111,6 +116,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -1219,61 +1225,60 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Environment_0: -44092948
+      Environment_1: -1722695096
+      Environment_10: -799987704
+      Environment_11: -329296422
       Environment_12: -2063988079
-      Environment_27: -470666190
-      Environment_51: 1762340798
-      Environment_32: -1931947395
-      Environment_46: 1908597293
-      Environment_45: 1296250667
-      Environment_2: -203438751
+      Environment_13: 1662995928
+      Environment_14: 1818761973
+      Environment_15: 1830600677
       Environment_16: -577265370
-      Environment_34: -1741842057
+      Environment_17: -281522022
+      Environment_18: -1202384451
+      Environment_19: 421881761
+      Environment_2: -203438751
       Environment_20: 944148904
-      Environment_5: 2102642110
-      Environment_9: -1546806623
-      Environment_31: 537906963
-      Environment_44: 428539677
-      Environment_7: -857443027
-      Environment_37: -828082189
       Environment_21: -705363489
-      Environment_48: -1377056476
-      Environment_24: 1751360761
-      Environment_43: -1146665605
       Environment_22: 1332112690
       Environment_23: -752929308
-      Environment_4: 645479832
-      Environment_17: -281522022
-      Environment_3: 348329991
-      Environment_35: -4328232
-      Environment_39: 2044172916
-      Environment_8: -2127977980
-      Environment_33: 1344417105
-      Environment_42: 1687118194
-      Environment_26: -301003767
-      Environment_40: -2115472253
-      Environment_6: -2031699901
-      Environment_30: 1140055654
-      Environment_36: -759922116
-      Environment_50: -1830862100
+      Environment_24: 1751360761
       Environment_25: 1976422609
-      Environment_38: -537279186
-      Environment_47: 450101574
-      Environment_0: -44092948
-      Environment_14: 1818761973
-      Environment_1: -1722695096
-      Environment_19: 421881761
-      Environment_13: 1662995928
-      Environment_41: 915178681
-      Environment_29: 1341373076
-      Environment_11: -329296422
-      Environment_18: -1202384451
-      Environment_15: 1830600677
+      Environment_26: -301003767
+      Environment_27: -470666190
       Environment_28: -850402352
-      Environment_10: -799987704
+      Environment_29: 1341373076
+      Environment_3: 348329991
+      Environment_30: 1140055654
+      Environment_31: 537906963
+      Environment_32: -1931947395
+      Environment_33: 1344417105
+      Environment_34: -1741842057
+      Environment_35: -4328232
+      Environment_36: -759922116
+      Environment_37: -828082189
+      Environment_38: -537279186
+      Environment_39: 2044172916
+      Environment_4: 645479832
+      Environment_40: -2115472253
+      Environment_41: 915178681
+      Environment_42: 1687118194
+      Environment_43: -1146665605
+      Environment_44: 428539677
+      Environment_45: 1296250667
+      Environment_46: 1908597293
+      Environment_47: 450101574
+      Environment_48: -1377056476
       Environment_49: -628893317
-  spritePackingTag: 
+      Environment_5: 2102642110
+      Environment_50: -1830862100
+      Environment_51: 1762340798
+      Environment_6: -2031699901
+      Environment_7: -857443027
+      Environment_8: -2127977980
+      Environment_9: -1546806623
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

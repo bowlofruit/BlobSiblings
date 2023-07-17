@@ -1,16 +1,19 @@
 using UnityEngine;
 
-public class LevelCompleteMenu : MonoBehaviour
+namespace BlobSiblings
 {
-    [SerializeField] private GameObject _levelCompleteMenu;
-
-    private void Awake()
+    public class LevelCompleteMenu : MonoBehaviour
     {
-        EventController.LevelComplete.AddListener(ActivityMenu);
-    }
+        [SerializeField] private GameObject _levelCompleteMenu;
 
-    private void ActivityMenu()
-    {
-        _levelCompleteMenu.SetActive(true);
+        private void Awake()
+        {
+            EventController.LevelComplete.AddListener(ActivityMenu);
+        }
+
+        private void ActivityMenu()
+        {
+            _levelCompleteMenu.SetActive(true);
+        }
     }
 }
