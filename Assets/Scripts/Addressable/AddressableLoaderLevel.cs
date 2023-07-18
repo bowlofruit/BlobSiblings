@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace BlobSiblings
 {
-    public class AddressableLoader : MonoBehaviour
+    public class AddressableLoaderLevel : MonoBehaviour
     {
         [SerializeField] private string _levelName;
 

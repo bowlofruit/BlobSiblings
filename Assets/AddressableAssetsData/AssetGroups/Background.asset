@@ -16,7 +16,12 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 2b55ff94f0172744cb76f249d3bd2fcf
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: ab2fba4f0c587684b91f4c6dda4d5fbd
+    m_Address: Assets/Sprites/Background.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 3730e7ccd10a9674da22a10c0e3c0c20, type: 2}
   m_SchemaSet:
